@@ -1,12 +1,20 @@
 package com.example.laboratorio3.controller;
 
-//COMPLETAR
+import com.example.laboratorio3.repository.EmployeesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/employee")
 public class EmployeeController {
+    @Autowired
+    EmployeesRepository employeesRepository;
 
-    //COMPLETAR
+    public String listaEmployee(Model model){
 
-    public String listaEmployee(   ){
-        //COMPLETAR
+       return "employee/lista";
     }
 
     public String nuevoEmployeeForm( ) {
