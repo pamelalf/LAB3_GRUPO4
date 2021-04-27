@@ -7,10 +7,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
 </head>
-<body class="container">
+<body class="container" th:fragment="body">
 <h1>Gestión de Laboratorio 3</h1>
-<a th:href="@{}">Ir a la gestión de empleados</a><br />                 <!-- COMPLETAR -->
-<a th:href="@{}">Ir al historial de empleados</a><br />                <!-- COMPLETAR -->
-<a th:href="@{}">Reportes</a>                <!-- COMPLETAR -->
+<a th:href="@{/employee}">Ir a la gestión de empleados</a><br />                 <!-- COMPLETAR -->
+<a th:href="@{/historialEmployee}">Ir al historial de empleados</a><br />                <!-- COMPLETAR -->
+<a th:href="@{/reportes}">Reportes</a>                <!-- COMPLETAR -->
 </body>
 </html>
