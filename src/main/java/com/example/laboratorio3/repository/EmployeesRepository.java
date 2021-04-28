@@ -30,4 +30,15 @@ public interface EmployeesRepository extends JpaRepository<Employees, Integer> {
             "group by e.department_id ;",nativeQuery = true)
     List<EmployeeDescription> employeCantidad();
 
+    @Query(value = "select e.first_name, e.last_name,d.department_name ,j.job_title ,jh.start_date  from employees e\n" +
+            "inner join jobs j on e.job_id =j.job_id\n" +
+            "inner join job_history jh on jh.employee_id=e.employee_id\n" +
+            "inner join departments d on d.department_id=e.department_id\n" +
+            "where e.first_name like %?1% or e.last_name like %?1% or e.department_name like %?1% or j.job_title like %?1%" +
+            ";", nativeQuery = true)
+    List<EmployeeDescription> EmployeesDescription2();
+
+
+
+
 }
