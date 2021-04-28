@@ -12,10 +12,10 @@ import java.util.List;
 
 @Repository
 public interface EmployeesRepository extends JpaRepository<Employees, Integer> {
-    @Query(value = "select e.employee_id,e.first_name, e.last_name,j.job_title,d.department_name,l.city from employees e\n" +
+    @Query(value = "select e.first_name, e.last_name,jh.start_date , jh.end_date ,j.job_title from employees e\n" +
             "inner join jobs j on e.job_id =j.job_id\n" +
-            "inner join departments d on e.department_id=d.department_id\n" +
-            "inner join locations l on l.location_id = d.location_id", nativeQuery = true)
+            "inner join job_history jh on jh.employee_id=e.employee_id\n" +
+            "where e.salary >15000;", nativeQuery = true)
     List<EmployeeDescription> EmployeesDescription();
 
 }
