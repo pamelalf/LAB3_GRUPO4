@@ -18,4 +18,16 @@ public interface EmployeesRepository extends JpaRepository<Employees, Integer> {
             "where e.salary >15000;", nativeQuery = true)
     List<EmployeeDescription> EmployeesDescription();
 
+    @Query(value = "select d.department_name, e.first_name, e.last_name,e.salary from employees e\n" +
+            "inner join departments d on d.department_id = e.department_id\n" +
+            "inner join jobs j on j.job_id =e.job_id where j.job_title like \"% Manager\";", nativeQuery = true)
+    List<EmployeeDescription> employrGerentes();
+
+    @Query(value = "select c.country_name, l.city ,count(e.department_id) as cant from locations l  \n" +
+            "inner join  countries c  on l.country_id=c.country_id\n" +
+            "inner join departments d on d.location_id=l.location_id\n" +
+            "inner join employees e on e.department_id=d.department_id\n" +
+            "group by e.department_id ;",nativeQuery = true)
+    List<EmployeeDescription> employeCantidad();
+
 }

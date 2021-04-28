@@ -28,6 +28,19 @@ public class SearchController {
     }
 
 
+    @GetMapping("/search/reporte2")
+    public String emplo2(Model model){
+        model.addAttribute("lista1",employeesRepository.employrGerentes());
+
+        return "Search/reporte2";
+    }
+
+    @GetMapping("/search/reporte1")
+    public String emplo3(Model model){
+        model.addAttribute("lista1",employeesRepository.employeCantidad());
+        return "Search/reporte1";
+    }
+
 //COMPLETAR
 
 

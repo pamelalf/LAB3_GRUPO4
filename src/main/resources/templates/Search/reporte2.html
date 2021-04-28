@@ -15,23 +15,23 @@
 <a th:href="@{/search/reporte1}">Reporte de departamento por país y ciudad</a><br>                <!-- COMPLETAR -->
 <a th:href="@{/search/reporte2}">Reporte de gerentes con experiencia</a>
 
+
 <h2>Estadisticas empleados</h2>
 <hr/>
-<h4>Cantidad de empleados por región</h4>
+<h4>Reporte de gerentes con experiencian</h4>
 <table class="table table-sm">
     <tr>
+        <th>Departamento</th>
         <th>Nomnre</th>
         <th>Apellido</th>
-        <th>Fecha de inicio</th>
-        <th>Fecha de fin</th>
-        <th>Puesto</th>
+        <th>Salario</th>
     </tr>
     <tr th:each="emple, in:${lista1}">
+        <td th:text="${emple.getDepartment_name()}"></td>
         <td th:text="${emple.getFirst_name()}"></td>
         <td th:text="${emple.getLast_name()}"></td>
-        <td th:text="${emple.getStart_date()}"></td>
-        <td th:text="${emple.getEnd_date()}"></td>
-        <td th:text="${emple.getJob_title()}"></td>
+        <td th:text="${emple.getSalary()}"></td>
+
     </tr>
 </table>
 

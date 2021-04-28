@@ -6,5 +6,10 @@ public interface EmployeeDescription {
     String getStart_date();
     String getEnd_date();
     String getJob_title();
+    String getSalary();
+    String getDepartment_name();
+    String getCountry_name();
+    String getCity();
+    int getCant();
 
 }
